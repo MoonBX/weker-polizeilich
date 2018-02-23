@@ -58,20 +58,20 @@
     methods: {
       login(){
         this.model.password = md5(this.model.password);
-
-        api.login(this.model).then(res => {
-          console.log(res);
-          if(res.success){
-            localStorage.policeToken = res.data.webToken;
-            this.$router.push('/wk');
-          }else{
-            this.$notification.error({
-              message: res.message,
-              duration: 2
-            });
-          }
-
-        })
+        this.$router.push('/wk');
+        // api.login(this.model).then(res => {
+        //   console.log(res);
+        //   if(res.success){
+        //     localStorage.policeToken = res.data.webToken;
+        //     this.$router.push('/wk');
+        //   }else{
+        //     this.$notification.error({
+        //       message: res.message,
+        //       duration: 2
+        //     });
+        //   }
+        //
+        // })
       }
     }
   }
